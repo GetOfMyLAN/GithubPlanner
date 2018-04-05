@@ -1,4 +1,4 @@
-var username = "GitOffMyLAN";
+var username = "";
 var repo_url = "https://api.github.com/users/" + username + "/repos"
 var repos = [];
 
@@ -12,16 +12,17 @@ function repos_from_user (username, repos){
 };
 
 //A function that places all the varibles to a elerment on a webpage
-function veiwing_repos (username, repos, place){
-	for (var i = 0; i < repos.length; i++){
-		$(place).append("<li><a href=repo/"  + username + "/" + repos[i] + "><p>" +     username  + "/" + repos[i]  + "</p></a></li>")
+function veiwing_repos (a, b, place){
+	repos_from_user(a, b)
+	for (var i = 0; i < b.length; i++){
+		$(place).append("<li><a href=repo/"  + a + "/" + b[i] + "><p>" +     a  + "/" + b[i]  + "</p></a></li>")
 	};
 };
 
 //This is used for the code in the main page
-function main_page(){
-	repos_from_user(username, repos);
+//repos_from_user(username, repos);
+$("#username_repo").click(function(){
+	console.log("button pressed")
+	username = $("#username").val();
 	veiwing_repos(username, repos, "#repos");
-};
-
-main_page();
+})
