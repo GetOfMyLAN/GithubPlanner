@@ -10,6 +10,7 @@
   "author": "Thomas Payne",
   "license": "MIT",
   "dependencies": {
+    "angular": "^1.6.9",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "hogan-express": "^0.5.2",
